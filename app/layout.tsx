@@ -3,6 +3,7 @@ import { Providers } from "./providers/Provider";
 import { fontSans, fontMono } from "./fonts/fonts";
 import clsx from "clsx";
 import "./globals.css";
+import NavBar from "./NavBar";
 
 
 export const metadata: Metadata = {
@@ -21,7 +22,10 @@ export default function RootLayout({
       <body
       >
         <Providers>
-          {children}
+          <NavBar />
+          <main>
+            {children}
+          </main>
         </Providers>
       </body>
     </html>
