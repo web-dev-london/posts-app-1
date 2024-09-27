@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Providers } from "./providers/Provider";
 import { fontSans, fontMono } from "./fonts/fonts";
-import clsx from "clsx";
+// import clsx from "clsx";
 import "./globals.css";
 import NavBar from "./NavBar";
+import classNames from "classnames";
 
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export default function RootLayout({
 }>) {
 
   return (
-    <html lang="en" className={clsx(fontSans.variable, fontMono.variable)} >
+    <html lang="en" className={classNames(fontSans.variable, fontMono.variable)} >
       <body
       >
         <Providers>
