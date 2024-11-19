@@ -1,7 +1,6 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   async headers() {
     return [
@@ -12,10 +11,10 @@ const nextConfig = {
             key: 'referrer-policy',
             value: 'no-referrer-when-downgrade',
           },
-        ]
-      }
-    ]
-  }
+        ],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
