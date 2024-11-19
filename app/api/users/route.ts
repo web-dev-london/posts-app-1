@@ -1,14 +1,14 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+// In a page file, e.g., `pages/users.tsx`
 import prisma from "@/prisma/client";
-import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(_request: NextRequest) {
-
+export async function getServerSideProps() {
   const users = await prisma.user.findMany({
     orderBy: {
-      name: 'asc'
-    }
+      name: "asc",
+    },
   });
 
-  return NextResponse.json(users);
+  return {
+    props: { users },
+  };
 };
